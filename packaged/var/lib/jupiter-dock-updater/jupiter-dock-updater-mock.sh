@@ -4,8 +4,8 @@ set -e
 
 UPDATE_CHECK=0
 UPDATE_ERROR=0
-CURRENT_VER=4
-AVAILABLE_VER=5
+CURRENT_VER=4.4
+AVAILABLE_VER=4.5
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -23,12 +23,12 @@ function check()
 	echo "FW Current: $CURRENT_VER"
 	echo "FW Available: $AVAILABLE_VER"
 
-    if [[ "$AVAILABLE_VER" -gt "$CURRENT_VER" ]]; then
+    if (( $(echo "$AVAILABLE_VER > $CURRENT_VER" | bc -l) )); then
         echo "FW update available"
         exit 0
     fi
     echo "FW up to date"
-    exit 3
+    exit 7
 }
 
 
