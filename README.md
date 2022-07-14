@@ -4,8 +4,5 @@
 
 This project contains pre-built binaries for the steamdeck dock updater tool.
 
-This project is built from //thirdpartycode
-
-## Updating
-
-To update the contents of these binaries please check build-and-publish.sh in //thirdpartycode
+This project is built from the jupiter-dock-updater-nda project. Please consult
+the README.md in that project for updating instructions.
